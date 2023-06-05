@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Ubuntu;
+  place-items: center;
+
+}
+
+button {
+  border: 0;
+  outline: none;
+  background: none;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  background-image: url("./components/img/background-wallpaper.jpg");
+  background-size: cover;
+}
+
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background-image: url("./components//icon/menu.svg");
+  background-size: cover;
+  cursor: pointer;
+  z-index: 3;
+}
+
+body.open .menu-btn {
+  background-image: url("./components//icon/close.svg");
+}
+
+.menu {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  color: antiquewhite;
+}
+
+.menu nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  visibility: hidden;
+}
+
+body.open .menu nav {
+  visibility: visible;
+}
+
+.menu nav a {
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 700;
+  color: antiquewhite;
+  align-items: flex-start;
+  text-align: center;
+  opacity: 1;
+  transition: 0.25s;
+}
+
+body.open .menu a {
+  animation: show 0.3s backwards;
+}
+
+.menu nav:hover a:not(:hover) {
+  opacity: 0.5;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    translate: 0 -30px;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  height: 100vh;
+  aspect-ratio: 1 / 1;
+  translate: -50% -50%;
+  scale: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  z-index: 1;
+  transition: all 0.6s;
+}
+
+body.open .backdrop {
+  opacity: 1;
+  scale: 5;
+}
+
+.navbar {
+  border-radius: 15px;
+  
+}
+
+.icon-flaviar {
+  margin: -150px 0 0 0;
+}
+
+.bottom-section {
+  height: 275px;
+  background-color: rgb(42, 41, 41);
+  display: grid;
+  grid-template-columns: repeat(5 , 10fr);
+  grid-template-rows: repeat(2 ,1fr);
+}
+
+.help-section {
+  color: antiquewhite;
+  display: grid;
+  grid-area: 1/2/1/2;
+  margin: 25px 0 0 40px;
+  gap: 7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.icon-flaviar-two {
+  display: grid;
+  grid-area: 1/1/2/1;
+  margin: 0 0 0 30px;
+}
+
+.info-section a {
+  text-decoration: none;
+  color: chocolate;
+  font-size: 14px;
+}
+
+.line-bottom {
+  display: grid;
+  height: 1px;
+  width: 1000px;
+  background-color: antiquewhite;
+  grid-area: 2/2/2/3;
+  margin: 20px 0 0 0 ;
+}
+
+.about-section {
+  color: antiquewhite;
+  display: grid;
+  grid-area: 1/2/1/2;
+  margin: 20px 0 0 0 ;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 25px 0 0 250px;
+}
+
+.info-section-one a {
+  text-decoration: none;
+  color: chocolate;
+  font-size: 14px;
+}
